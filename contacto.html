@@ -4,6 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+      
+      #map {
+        height: 400px;
+        margin-bottom: 40px;
+      }
+    </style>
     
     <title>Psicologia Pineda</title>
 
@@ -37,8 +45,8 @@
           <ul class="nav navbar-nav">
             <li ><a href="index.html">Inicio <span class="sr-only">(current)</span></a></li>
             <li><a href="trayectoria.html">Trayectoria Profesional</a></li>
-            <li  class="active"><a href="#">Oferta de Servicios</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li ><a href="oferta.html">Oferta de Servicios</a></li>
+            <li  class="active"><a href="contacto.html">Contacto</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -50,36 +58,55 @@
      
     </div>
     
-    <h1 class="text-left" style="padding-left: 10px;margin-bottom: 10px">OFERTA DE SERVICIO</h1>
-    <header class="Header3">
-    </header>
+    <h1 class="text-left" style="padding-left: 10px;margin-bottom: 10px">CONTACTO</h1>
+    
+     <div id="map"></div>
 
-    <div class="BarraFicticia2">
-      
-    </div>
-  
-    <section class="Section-intro2">
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1 text-justify">
-          <h2>PSICOTERAPIA INDIVIDUAL, EN PAREJA O FAMILIAR.</h2>
-          <p>El servicio de atención individual, en pareja o familiar está relacionado con la necesidad inicial del cliente, la problemática que plantea y la expectativa u objetivos que tiene respecto al tratamiento que le sea de utilidad. Es decir, en el mismo proceso de atención pueden brindarse sesiones individuales, en pareja o en familia según lo definan de manera conjunta el cliente y el psicoterapeuta.</p>
-          <p>Los síntomas, conflictos, problemáticas o demandas de atención abordados a través de este modelo psicoterapuético son muy diversos, por ejemplo: depresión, baja autoestima, problemas de conducta, adicciones, violencia, celotipia, ludopatías, etc; es decir todas aquellas emociones, sentimientos, ideas y conductas que generan dolor, mal estar o molestia en el ser humano.</p>
-        </div>
-        <div class="col-md-10 col-md-offset-1 text-justify">
-          <h2>INFORMES DE EVALUACION PSICOLOGICA Y/O PSICOMETRICA</h2>
-          <p>Realizo informes de evaluaciones psicológicas y/o psicométricas solicitadas por instituciones educativas, de gobierno o privadas.
-          </p>
-        </div>
-        <div class="col-md-10 col-md-offset-1 text-justify">
-          <h2>IMPARTO CURSOS Y CONFERENCIAS</h2>
-          <p>Diseño e imparto cursos psicoformativos, que van dirigidos al personal que labora y/o a los usuarios de instituciones educativas, de gobierno o privadas.</p>
-        </div>
-      </div>
-    </section>
+     <div class="row">
+       <div class="col-md-6 text-center" style="margin-top: 40px">
+         <p>Teléfonos: Móvil: 8112120565 Fijo: 17672347</p>
+         <p>Contesto dudas a través del WhatsApp</p>
+         <p>Correo electronico: psicologia.pineda@gmail.com</p>
+         <br>
+         <p>Dirección: Guayule 443-A esquina con Avenida Las Palmas, Fraccionamiento Hacienda las Palmas 2do Sector, Apodaca, Nuevo León.</p>
+       </div>
+       <div class="col-md-6">
+         <form action="">
+           <input class="inputP" type="text" placeholder="Nombre">
+           <input class="inputP" type="email" placeholder="Correo">
+           <input class="inputP" type="tel" placeholder="Telefono">
+           <input class="inputP" type="text" placeholder="Comentarios">
+         </form>
+       </div>
+     </div>
 
     <footer class="Footer text-center">
       <p class="Footer-text">Derechos reservados</p>
     </footer>
+
+     <script>
+function initMap() {
+  var customMapType = new google.maps.StyledMapType([{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}], {
+      name: 'Estilizado'
+  });
+  var customMapTypeId = 'custom_style';
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: {lat: 40.674, lng: -73.946},  // Brooklyn.
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+    }
+  });
+
+  map.mapTypes.set(customMapTypeId, customMapType);
+  map.setMapTypeId(customMapTypeId);
+}
+
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4U9XyURV77LQH0GWIaxtThcaeIVD568s&callback=initMap"
+        async defer></script>
     
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
