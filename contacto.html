@@ -46,6 +46,7 @@
             <li ><a href="index.html">Inicio <span class="sr-only">(current)</span></a></li>
             <li><a href="trayectoria.html">Trayectoria Profesional</a></li>
             <li ><a href="oferta.html">Oferta de Servicios</a></li>
+            <li><a href="modelo.html">Modelo de Psicoterapia</a></li>
             <li  class="active"><a href="contacto.html">Contacto</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -92,11 +93,20 @@ function initMap() {
   var customMapTypeId = 'custom_style';
 
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: {lat: 40.674, lng: -73.946},  // Brooklyn.
+    zoom: 18,
+    center: {lat: 25.7767946, lng: -100.2659932}, 
+    scrollwheel:  false,
     mapTypeControlOptions: {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
     }
+    
+  }
+  );
+
+  var marker = new google.maps.Marker({
+    position: {lat: 25.7767946, lng: -100.2659932}, 
+    map: map,
+    title: 'Psicologia Pineda'
   });
 
   map.mapTypes.set(customMapTypeId, customMapType);
